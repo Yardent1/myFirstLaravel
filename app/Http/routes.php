@@ -7,7 +7,7 @@
    * Вывести панель с задачами
    */
   Route::get('/', function () {
-      
+      return view('tasks');
   });
 
   /**
