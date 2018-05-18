@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
  * Вывести панель с задачами
  */
 Route::get('/', function () {
-    return view('tasks');
+//    $task= new Task();
+//    $tasks=$task->all();
+    $tasks = Task::orderBy('created_at', 'asc')->get();
+    return view('tasks', ['tasks' => $tasks]);
 });
 
 /**
@@ -34,6 +37,7 @@ Route::post('/task', function (Request $request) {
 /**
    * Удалить задачу
    */
- // Route::delete('/task/{task}', function (Task $task) {
-    //
-//  });
+  Route::delete('/task/{task}', function (Task $task) {
+    $task->delete();
+    return redirect('/');
+  });
