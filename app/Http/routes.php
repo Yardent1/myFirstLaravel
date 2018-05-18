@@ -41,3 +41,12 @@ Route::post('/task', function (Request $request) {
     $task->delete();
     return redirect('/');
   });
+  Route::post('/task/{task}', function (Task $task) {
+    $str = DB::table('tasks')->where('id', $task)->value('name');
+      var_dump($str);
+  });
+  
+  Route::patch('/task/{task}', function (Task $task, Request $request) {
+    $task->edit();
+    return redirect('/');
+  });

@@ -63,6 +63,12 @@
                        {{method_field('delete')}}
                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                     </form>
+                    <form action="{{url('task/'.$task->id)}}" method="post">
+                        {{csrf_field()}}
+                       {{method_field('post')}}
+                        <button type="submit" class="btn btn-default"><i class="fa fa-edit"></i></button>
+                    </form>
+                    
                     
                 </td>
               </tr>
