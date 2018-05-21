@@ -66,12 +66,18 @@
                     <form action="{{url('news/'.$news_item->id)}}" method="post">
                         {{csrf_field()}}
                        {{method_field('delete')}}
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Удалить </button>
                     </form>
                 </td>
                 <td>
-                    <a href="{{url('news/'.$news_item->id.'/edit')}}"class="fa fa-edit"></a>
+<!--                    <a href="{{url('news/'.$news_item->id.'/edit')}}"class="fa fa-edit"></a>
+                    <button type="submit" class="btn btn-danger"><i class="fa fa-edit"></i></button>
+-->
+                     <form action="{{url('news/'.$news_item->id.'/edit')}}" method="get">
+                        {{csrf_field()}}
                        
+                        <button type="submit" class="btn btn-default"> <i class="fa fa-edit"></i> Редактировать</button>
+                    </form>  
                   
                     
                     
