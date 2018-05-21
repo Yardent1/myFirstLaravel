@@ -47,7 +47,8 @@
           <thead>
             <th>Новости</th>
             <th>Текст</th>
-            <th>&nbsp;</th>
+            <th>Дата изменения</th>
+            <th></th>
           </thead>
 
           <!-- Тело таблицы -->
@@ -56,10 +57,13 @@
               <tr>
                 <!-- Имя новости -->
                 <td class="table-text">
-                  <div>{{ $news_item->name }}</div>
+                  <div title="{{$news_item->text}}">{{ $news_item->name }}</div>
                 </td>
                 <td class="table-text">
-                  <div>{{ $news_item->text }}</div>
+                  <div title="{{$news_item->updated_at}}">{{ $news_item->text }}</div>
+                </td>
+                <td class="table-text">
+                  <div>{{ $news_item->updated_at }}</div>
                 </td>
 
                 <td>

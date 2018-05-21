@@ -2,6 +2,7 @@
 
 use App\Task;
 use App\News;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 /**
@@ -123,6 +124,7 @@ Route::post('/news/edit', function (Request $request) {
     $news = News::find($request->id);
     $news->name = $request->name;
     $news->text = $request->text;
+    $news->updated_at = Carbon::now('Europe/Kiev');
     $news->save();
     return redirect('/news');
 });

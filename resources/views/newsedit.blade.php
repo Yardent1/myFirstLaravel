@@ -21,6 +21,7 @@
             <div class="col-sm-6">
                 <input type="text" name="name" id="news-name" class="form-control" value="{{$news_item->name}}">
                 <input type="text" name="text" id="news-text" class="form-control" value="{{$news_item->text}}">
+                
             </div>
         </div>
 
