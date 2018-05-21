@@ -9,11 +9,11 @@
 <div class="panel-body">
     <!-- Отображение ошибок проверки ввода -->
     @include('common.errors')
-
+@if(!empty($task))
     <!-- Форма новой задачи -->
-    <form action="{{ url('task') }}" method="POST" class="form-horizontal">
+    <form action="{{ url('task/edit') }}" method="POST" class="form-horizontal">
         {{ csrf_field() }}
-
+        <input type="hidden" name="id" value="{{$task->id}}"/>
         <!-- Имя задачи -->
         <div class="form-group">
             <label for="task" class="col-sm-3 control-label">Редактировать</label>
@@ -32,5 +32,8 @@
             </div>
         </div>
     </form>
+    @else
+    <p> Нет Задачи для редактирования <a href="{{url('/')}}">На главную</a></p>
+    @endif
 </div>
 @endsection
