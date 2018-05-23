@@ -19,8 +19,10 @@
             <label for="news" class="col-sm-3 control-label">НОВОСТИ</label>
 
             <div class="col-sm-6">
+                <label for="news" class="col-sm-3 control-label">Имя</label>
                 <input type="text" name="name" id="news-name" class="form-control">
-                <input type="text" name="text" id="news-text" class="form-control">
+                <label for="news" class="col-sm-3 control-label">Текст</label>
+                <textarea  name="text" rows="3" id="news-text" class="form-control"></textarea>
             </div>
         </div>
 
